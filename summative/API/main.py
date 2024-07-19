@@ -23,7 +23,7 @@ scaler_charges = joblib.load('scaler_charges.pkl')
 class InsuranceData(BaseModel):
     age: int = Field(gt=17, lt=101, description='Age must be between 18 and 100')
     sex: int = Field(ge=0, le=1, description='Sex must be 0(male) or 1(female)')
-    bmi: float = Field(gt=0, description="BMI must be greater than 0")
+    bmi: float = Field(ge=23.5, description="BMI must be greater than 0")
     children: int = Field(ge=0, description="Number of children must be a non-negative integer")
     smoker: int = Field(ge=0, le=1, description="Smoker must be 0 (no) or 1 (yes)")
     region: int = Field(ge=0, le=3, description="Region must be between 0 and 3")
